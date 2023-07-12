@@ -7,14 +7,14 @@ import { Pizza } from '../pizza';
 })
 export class AddPizzaComponent {
 
-  arrayIngredienti:string[] =[]
+  //arrayIngredienti:string[] =[]
   pizzaName!:string;
   pizzaObject:Pizza={
     nome:'',
     ingredienti:[]
   }
   ingredients!:string[];
-  @Output() sendPizza = new EventEmitter<Pizza[]>();
+  @Output() sendPizza = new EventEmitter<Pizza>();
   @ViewChild('nomePizza') inputPizza!:ElementRef;
   @ViewChild('ingrediente1') checkIngrediente1!:ElementRef;
   @ViewChild('ingrediente2') checkIngrediente2!:ElementRef;
@@ -23,34 +23,35 @@ export class AddPizzaComponent {
   @ViewChild('ingrediente5') checkIngrediente5!:ElementRef;
   @ViewChild('ingrediente6') checkIngrediente6!:ElementRef;
   @ViewChild('ingrediente7') checkIngrediente7!:ElementRef;
-  pizze:Pizza[]= []
+
   emitPizza(){
     this.pizzaName = this.inputPizza.nativeElement.value
-    this.pushIngredienti();
-    this.pizzaObject.nome = this.pizzaName
-    this.pizzaObject.ingredienti = this.arrayIngredienti
-    this.pizze.push(this.pizzaObject)
-    this.sendPizza.emit(this.pizze)
+    const pizzaObj : Pizza = {
+      nome: this.pizzaName,
+      ingredienti : this.pushIngredienti()
+    }
+    this.sendPizza.emit(pizzaObj)
   }
 
   pushIngredienti(){
+    let arrayIngredienti:string[]=[];
     if(this.checkIngrediente1.nativeElement.checked){
-      this.arrayIngredienti.push(this.checkIngrediente1.nativeElement.defaultValue)
+      arrayIngredienti.push(this.checkIngrediente1.nativeElement.defaultValue)
       // console.log(this.arrayIngredienti)
     }  if(this.checkIngrediente2.nativeElement.checked){
-      this.arrayIngredienti.push(this.checkIngrediente2.nativeElement.defaultValue)
+      arrayIngredienti.push(this.checkIngrediente2.nativeElement.defaultValue)
       console.log(this.checkIngrediente2.nativeElement.defaultValue)
     }
       if(this.checkIngrediente3.nativeElement.checked){
-        this.arrayIngredienti.push(this.checkIngrediente3.nativeElement.defaultValue)
+        arrayIngredienti.push(this.checkIngrediente3.nativeElement.defaultValue)
     }if(this.checkIngrediente4.nativeElement.checked){
-      this.arrayIngredienti.push(this.checkIngrediente4.nativeElement.defaultValue)
+      arrayIngredienti.push(this.checkIngrediente4.nativeElement.defaultValue)
   } if(this.checkIngrediente5.nativeElement.checked){
-    this.arrayIngredienti.push(this.checkIngrediente5.nativeElement.defaultValue)
+    arrayIngredienti.push(this.checkIngrediente5.nativeElement.defaultValue)
 } if(this.checkIngrediente6.nativeElement.checked){
-  this.arrayIngredienti.push(this.checkIngrediente6.nativeElement.defaultValue)
+  arrayIngredienti.push(this.checkIngrediente6.nativeElement.defaultValue)
 } if(this.checkIngrediente7.nativeElement.checked){
-  this.arrayIngredienti.push(this.checkIngrediente7.nativeElement.defaultValue)
-}
+    arrayIngredienti.push(this.checkIngrediente7.nativeElement.defaultValue)
+} return arrayIngredienti
 }
 }

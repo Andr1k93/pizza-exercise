@@ -7,13 +7,13 @@ import { Pizza } from './pizza';
 })
 export class AppComponent {
   title = 'pizza';
-  pizza:Pizza[]= [{
+  pizza:Pizza= {
     nome:'',
     ingredienti:[]
-  }]
-
-  receivePizza(pizze:Pizza[]){
-    this.pizza = pizze
-    this.pizza= pizze
+  }
+  pizze:Pizza[]=[]
+  receivePizza(objectPizza:Pizza){
+    this.pizza = objectPizza
+    this.pizze.push(this.pizza)
   }
 }

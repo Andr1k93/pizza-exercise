@@ -6,9 +6,9 @@ import { Pizza } from '../pizza';
   styleUrls: ['./pizza-element.component.css']
 })
 export class PizzaElementComponent {
-@Input() pizze:Pizza[]=[{
+@Input() pizza:Pizza={
   nome:'',
   ingredienti:[]
-}]
+}
 
 }
