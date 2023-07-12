@@ -1,0 +1,12 @@
+.pizza-container{
+    margin: 50px;
+}
+.selected-pizza{
+    margin-top: 50px;
+    margin-left: 20px;
+}
+.card{
+    display: flex;
+    border: 1px solid grey;
+    width: 40vw;
+}

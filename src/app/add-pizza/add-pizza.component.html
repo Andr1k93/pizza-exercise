@@ -1,0 +1,26 @@
+<div class="form-container">
+    <h2>Add Pizza</h2>
+    <div class="d-flex flex-column ">
+        <label for="nomePizza">Nome pizza</label>
+        <input type="text" class="" name="nome-pizza" id="" #nomePizza>
+        <label for="" class="mt-4">Ingredienti:</label>
+
+        <br>
+        <label for="flavour1"> Pomodoro <input #ingrediente1 type="checkbox" id="flavour1" name="flavour1" value="Pomodoro"></label><br>
+        
+        <label for="flavour2"> San Daniele <input #ingrediente2  type="checkbox" id="flavour2" name="flavour2" value="San Daniele"></label><br>
+        
+        <label for="flavour3"> Prosciutto Cotto <input #ingrediente3 type="checkbox" id="flavour3" name="flavour3" value="Prosciutto Cotto "></label><br>
+        
+        <label for="flavour4">Salame <input #ingrediente4   type="checkbox" id="flavour4" name="flavour4" value="Salame"></label><br>
+       
+        <label for="flavour5"> Melanzane  <input #ingrediente5 type="checkbox" id="flavour5" name="flavour5" value="Melanzane"></label><br>
+        
+        <label for="flavour6"> Fiori di zucca <input #ingrediente6 type="checkbox" id="flavour6" name="flavour6" value="Fiori di zucca"></label><br>
+       
+        <label for="flavour7"> Funghi  <input #ingrediente7 type="checkbox" id="flavour7" name="flavour7" value="Funghi"></label><br>
+
+
+        <button class="btn btn-primary addButton"  (click)="emitPizza()">+</button>
+    </div>
+</div>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { Pizza } from './pizza';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pizza';
+  pizza:Pizza[]= [{
+    nome:'',
+    ingredienti:[]
+  }]
+
+  receivePizza(pizze:Pizza[]){
+    this.pizza = pizze
+    this.pizza= pizze
+  }
 }
